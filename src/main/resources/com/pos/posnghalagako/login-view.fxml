@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.pos.posnghalagako.controller.LoginController">
+    <padding><Insets topRightBottomLeft="30"/></padding>
+
+    <Label text="POSngHALAGAko" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Label text="Login to your account"/>
+
+    <VBox spacing="8" maxWidth="250">
+        <Label text="Username:"/>
+        <TextField fx:id="usernameField" promptText="Enter username"/>
+
+        <Label text="Password:"/>
+        <PasswordField fx:id="passwordField" promptText="Enter password"/>
+
+        <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+
+        <Button text="Login" onAction="#handleLogin" maxWidth="Infinity"/>
+    </VBox>
+
+    <Hyperlink text="Don't have an account? Sign Up" onAction="#handleOpenSignUp"/>
+</VBox>

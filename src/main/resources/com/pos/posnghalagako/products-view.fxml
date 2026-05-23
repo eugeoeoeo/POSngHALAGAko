@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.pos.posnghalagako.controller.ProductController">
+
+    <!-- Header -->
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 8;">
+            <Button text="Back" onAction="#handleBack"/>
+            <Label text="Product Management" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <!-- Center — Table -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="40"/>
+                    <TableColumn fx:id="colEmoji" text="Icon" prefWidth="50"/>
+                    <TableColumn fx:id="colName" text="Name" prefWidth="120"/>
+                    <TableColumn fx:id="colCategory" text="Category" prefWidth="110"/>
+                    <TableColumn fx:id="colPrice" text="Price" prefWidth="80"/>
+                    <TableColumn fx:id="colStock" text="Stock" prefWidth="60"/>
+                    <TableColumn fx:id="colActive" text="Active" prefWidth="60"/>
+                    <TableColumn fx:id="colDescription" text="Description" prefWidth="200"/>
+                </columns>
+                <placeholder>
+                    <Label text="No products found"/>
+                </placeholder>
+            </TableView>
+
+            <HBox spacing="8">
+                <Button fx:id="editBtn" text="Edit Selected" onAction="#handleEdit"/>
+                <Button fx:id="deleteBtn" text="Delete Selected" onAction="#handleDelete"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="Refresh" onAction="#handleRefresh"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom — Add/Edit Form -->
+    <bottom>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-border-color: lightgray; -fx-border-width: 1 0 0 0;">
+            <Label fx:id="formTitle" text="Add New Product" style="-fx-font-weight: bold;"/>
+
+            <HBox spacing="8">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Emoji"/>
+                    <TextField fx:id="emojiField" promptText="e.g. heart"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Name"/>
+                    <TextField fx:id="nameField" promptText="e.g. Love"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Category"/>
+                    <TextField fx:id="categoryField" promptText="e.g. Core Emotion"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Price"/>
+                    <TextField fx:id="priceField" promptText="e.g. 99.99"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Stock"/>
+                    <TextField fx:id="stockField" promptText="e.g. 999"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="4">
+                <Label text="Description"/>
+                <TextField fx:id="descriptionField" promptText="Short description"/>
+            </VBox>
+
+            <HBox spacing="8">
+                <Button fx:id="saveBtn" text="Save" onAction="#handleSave"/>
+                <Button fx:id="cancelBtn" text="Cancel" onAction="#handleCancelEdit" visible="false"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

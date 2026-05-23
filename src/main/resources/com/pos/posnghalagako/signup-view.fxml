@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="12"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.pos.posnghalagako.controller.SignUpController">
+    <padding><Insets topRightBottomLeft="30"/></padding>
+
+    <Label text="Create Account" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="8" maxWidth="250">
+        <Label text="Username:"/>
+        <TextField fx:id="usernameField" promptText="Enter username"/>
+
+        <Label text="Full Name:"/>
+        <TextField fx:id="fullNameField" promptText="Enter full name"/>
+
+        <Label text="Password:"/>
+        <PasswordField fx:id="passwordField" promptText="Enter password"/>
+
+        <Label text="Confirm Password:"/>
+        <PasswordField fx:id="confirmPasswordField" promptText="Re-enter password"/>
+
+        <Label fx:id="errorLabel" text="" style="-fx-text-fill: red;"/>
+
+        <Button text="Sign Up" onAction="#handleSignUp" maxWidth="Infinity"/>
+    </VBox>
+
+    <Hyperlink text="Already have an account? Log In" onAction="#handleBackToLogin"/>
+</VBox>

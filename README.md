@@ -2,7 +2,8 @@
 
 A simple JavaFX Point-of-Sale (POS) application for selling emotions and feelings — built as a practice project for Object-Oriented Programming.
 
-> *"POS ng Halaga Ko"* — Your one-stop shop for emotions.
+> *"POS ng Halaga Ko"* 
+Your one-stop shop for emotions.
 
 ## About
 
